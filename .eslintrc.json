@@ -4,10 +4,10 @@
     "es2021": true
   },
   "extends": [
-    "prettier",
     "plugin:react/recommended",
     "google",
-    "plugin:react/jsx-runtime"
+    "plugin:react/jsx-runtime",
+    "prettier"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -19,8 +19,18 @@
   },
   "plugins": ["react", "@typescript-eslint", "prettier"],
   "rules": {
-    "prettier/prettier": ["error", { "endOfLine": "auto" }],
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto",
+        "trailingComma": "es5",
+        "tabWidth": 4,
+        "semi": true,
+        "singleQuote": true
+      }
+    ],
     "linebreak-style": 0,
-    "require-jsdoc": "off"
+    "require-jsdoc": "off",
+    "react/jsx-key": "off"
   }
 }
