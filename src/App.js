@@ -1,3 +1,4 @@
+import { lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Home from './componentes/Home';
 import About from './componentes/About';
@@ -9,6 +10,7 @@ import NewProducts from './componentes/NewProducts';
 import FeaturedProducts from './componentes/FeaturedProducts';
 import Users from './componentes/Users';
 import Color from './componentes/Color';
+const LazyComponent = lazy(() => import('./componentes/LazyComponent'));
 
 function App() {
     return (
@@ -17,6 +19,14 @@ function App() {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
+                <Route
+                    path="/lazy-component"
+                    element={
+                        <Suspense fallback="Loading........">
+                            <LazyComponent />
+                        </Suspense>
+                    }
+                />
                 <Route path="/order-summary" element={<OrderSummary />} />
                 <Route path="products" element={<Products />}>
                     <Route index element={<FeaturedProducts />} />
