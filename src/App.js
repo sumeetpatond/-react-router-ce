@@ -7,6 +7,7 @@ import PageNotFound from './componentes/PageNotFound';
 import Products from './componentes/Products';
 import NewProducts from './componentes/NewProducts';
 import FeaturedProducts from './componentes/FeaturedProducts';
+import Users from './componentes/Users';
 
 function App() {
     return (
@@ -21,6 +22,7 @@ function App() {
                     <Route path="new" element={<NewProducts />} />
                     <Route path="featured" element={<FeaturedProducts />} />
                 </Route>
+                <Route path="/users/:id" element={<Users />} />
                 <Route path="*" element={<PageNotFound />} />
             </Routes>
         </>
