@@ -8,6 +8,7 @@ import Products from './componentes/Products';
 import NewProducts from './componentes/NewProducts';
 import FeaturedProducts from './componentes/FeaturedProducts';
 import Users from './componentes/Users';
+import Color from './componentes/Color';
 
 function App() {
     return (
@@ -23,6 +24,7 @@ function App() {
                     <Route path="featured" element={<FeaturedProducts />} />
                 </Route>
                 <Route path="/users/:id" element={<Users />} />
+                <Route path="color" element={<Color />} />
                 <Route path="*" element={<PageNotFound />} />
             </Routes>
         </>
